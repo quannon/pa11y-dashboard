@@ -26,10 +26,36 @@
 	</div>
 {{/running}}
 
+{{#ruleIgnored}}
+	<div class="col-md-12 clearfix" data-test="alert">
+		<div class="alert alert-success">
+			<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+			<strong>Rule ignored!</strong>
+			<p>
+				You've ignored an accessibility rule for this URL.
+				<a href="{{task.hrefRun}}">Click here to generate results with the ignored rule excluded</a>
+			</p>
+		</div>
+	</div>
+{{/ruleIgnored}}
+
+{{#ruleUnignored}}
+	<div class="col-md-12 clearfix" data-test="alert">
+		<div class="alert alert-success">
+			<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+			<strong>Rule unignored!</strong>
+			<p>
+				You've removed an ignored accessibility rule for this URL.
+				<a href="{{task.hrefRun}}">Click here to generate results with the ignored rule included again</a>
+			</p>
+		</div>
+	</div>
+{{/ruleUnignored}}
+
 {{> task-header}}
 
 {{#if results}}
-	
+
 	{{#unless hasOneResult}}
 		{{> graph}}
 	{{/unless}}

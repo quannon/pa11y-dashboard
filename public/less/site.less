@@ -216,8 +216,6 @@
 /* Badges */
 .badge {
 	border-radius:0.25em;
-}
-.badge {
 	display:inline-block;
 	padding:10px;
 	font-size:ceil(@font-size-base * 0.85); // ~13px;
@@ -256,9 +254,26 @@
 
 	li {
 		margin-bottom:20px;
+		padding-right:90px;
+		position:relative;
 
 		&:last-child {
 			margin-bottom:0;
+		}
+
+		form {
+			display:none;
+			position:absolute;
+			right:0;
+			top:0;
+
+			&:hover .btn {
+				color:@brand-primary;
+			}
+		}
+
+		&:hover form {
+			display:block;
 		}
 	}
 
@@ -267,6 +282,7 @@
 		font-style:italic;
 		word-wrap:break-word;
 	}
+
 }
 .task-danger {
 	border-color:@brand-danger;
